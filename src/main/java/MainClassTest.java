@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MainClassTest {
 
@@ -21,6 +20,29 @@ public class MainClassTest {
     public void testGetClassNumber(){
 
         assertTrue(this.mainClass.getClassNumber() > 45, "Возвращаемое число меньше 45");
+
+    }
+
+    // В классе MainClassTest написать тест (назвать testGetClassString), который проверяет, что метод getClassString возвращает строку, в которой есть подстрока “hello” или “Hello”, если нет ни одной из подстрок - тест падает.
+    @Test
+    public void testGetClassString(){
+
+        if (this.mainClass.getClassString().contains("hello")){
+
+            assertTrue(1 == 1);
+            System.out.println("В проверяемой строке есть подстрока 'hello'");
+
+        }else if (this.mainClass.getClassString().contains("Hello")){
+
+            assertTrue(1 == 1);
+            System.out.println("В проверяемой строке есть подстрока 'Hello'");
+
+        }else {
+
+            assertTrue(1 != 1, "В проверяемой строке нет строк 'hello' или 'Hello'");
+
+        }
+
 
     }
 
